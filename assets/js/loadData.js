@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // const projects = document.querySelectorAll("#portfolio .projects ul li");
-  // projects.forEach((project) => {
-  //   project.addEventListener("click", function () {
-  //     const projectName = this.getAttribute("data-project");
-  //     portfolioData.loadData(projectName);
-  //   });
-  // });
+  const projects = document.querySelectorAll(".project-list ul li");
+  projects.forEach((project) => {
+    project.addEventListener("click", function () {
+      const projectName = this.getAttribute("data-project");
+      projectsData.loadData(projectName);
+    });
+  });
 
   skillData.loadData(); //스킬 불러오기
-  //const defaultProject = projects[0].getAttribute("data-project"); // 기본 프로젝트 설정
-  projectsData.loadData();
+  const defaultProject = projects[0].getAttribute("data-project"); // 기본 프로젝트 설정
+  projectsData.loadData(defaultProject);
 });

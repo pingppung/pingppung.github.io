@@ -1,10 +1,10 @@
 const projectsData = {
-  loadData: function () {
+  loadData: function (projectName) {
     fetch("/data/projects.json")
       .then((response) => response.json())
       .then((data) => {
-        //const project = data.find((item) => item.subject == projectName);
-        this.createProject(data);
+        const project = data.find((item) => item.subject == projectName);
+        this.createProject(project);
       })
       .catch((error) =>
         console.error(
@@ -14,59 +14,34 @@ const projectsData = {
       );
   },
 
-  createProject: function (data) {
-    const projectSection = document.querySelector(".projects-list");
-    data.forEach((project) => {
-      const projectDiv = document.createElement("div");
-      projectDiv.classList.add("project");
+  createProject: function (project) {
+    const projectSection = document.querySelector("#projects .pj");
 
-      const conenttDiv = document.createElement("div");
-      conenttDiv.classList.add("project-content");
+    const subject = projectSection.querySelector(".subject");
+    subject.textContent = project.subject;
 
-      const subject = document.createElement("h3"); //주제 타이틀
-      subject.classList.add("subject");
-      subject.textContent = project.subject;
+    const content = projectSection.querySelector(".content");
+    content.textContent = project.content;
 
-      const content = document.createElement("div");
-      content.classList.add("content");
-      content.textContent = project.content;
+    const skills = projectSection.querySelector(".skills");
+    skills.textContent = "스킬: " + project.skills.join(", ");
 
-      const skills = document.createElement("div");
-      skills.classList.add("skills");
-      skills.textContent = "스킬: " + project.skills.join(", ");
-
-      const role = document.createElement("div");
-      role.classList.add("role");
-      role.innerHTML = "<strong>맡은 역할:</strong>";
-      project.role.forEach((roleItem) => {
-        const roleParagraph = document.createElement("p");
-        roleParagraph.textContent = roleItem;
-        role.appendChild(roleParagraph);
-      });
-
-      const gitHubOpen = document.createElement("a");
-      gitHubOpen.classList.add("gitHubOpen");
-      gitHubOpen.href = project.git;
-
-      const youtubeOpen = document.createElement("a");
-      youtubeOpen.classList.add("youtubeOpen");
-      youtubeOpen.href = project.youtube;
-
-      conenttDiv.appendChild(subject);
-      conenttDiv.appendChild(content);
-      conenttDiv.appendChild(skills);
-      conenttDiv.appendChild(role);
-      conenttDiv.appendChild(gitHubOpen);
-      conenttDiv.appendChild(youtubeOpen);
-
-      const imgDiv = document.createElement("div");
-      imgDiv.classList.add("project-img");
-
-      projectDiv.appendChild(conenttDiv);
-      projectDiv.appendChild(imgDiv);
-
-      projectSection.appendChild(projectDiv);
+    const role = projectSection.querySelector(".role");
+    role.innerHTML = "<strong>맡은 역할:</strong>";
+    project.role.forEach((roleItem) => {
+      const roleParagraph = document.createElement("p");
+      roleParagraph.textContent = roleItem;
+      role.appendChild(roleParagraph);
     });
+
+    const gitHubOpen = projectSection.querySelector(".gitHubOpen");
+    gitHubOpen.href = project.git;
+
+    const youtubeOpen = projectSection.querySelector(".youtubeOpen");
+    youtubeOpen.href = project.youtube;
+
+    const img = projectSection.querySelector(".project-img");
+    img.style.backgroundImage = `url('../assets/images/${project.img}')`;
   },
 };
 

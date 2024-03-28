@@ -16,7 +16,8 @@
       "Openvidu API를 이용하여 웹 환경 화상채팅 시스템 구현"
     ],
     "git": "https://github.com/pingppung/ProdyTalk",
-    "youtube": "https://youtu.be/UOVKqniYIb0"
+    "youtube": "https://youtu.be/UOVKqniYIb0",
+    "img": "Prodytalk.jpg"
   },
   {
     "subject": "BattleQuizGame",
@@ -27,7 +28,8 @@
       "Player, Room, RoomManager 클래스로 분리하여 멀티룸 구현 및 복잡도 개선"
     ],
     "git": "https://github.com/pingppung/BattleQuizGame",
-    "youtube": "https://youtu.be/ra82PbbsF6w"
+    "youtube": "https://youtu.be/ra82PbbsF6w",
+    "img": "Prodytalk.jpg"
   },
   {
     "subject": "Chemistry",
@@ -38,7 +40,8 @@
       "캐릭터 모델링 및 애니메이션 적용"
     ],
     "git": "x",
-    "youtube": "https://youtu.be/aHq1wQ6DmF0"
+    "youtube": "https://youtu.be/aHq1wQ6DmF0",
+    "img": "Prodytalk.jpg"
   },
   {
     "subject": "HansungGO",
@@ -55,7 +58,8 @@
       "Vuforia를 이용해 이미지 데이터베이스 생성"
     ],
     "git": "private",
-    "youtube": "x"
+    "youtube": "x",
+    "img": "Prodytalk.jpg"
   },
   {
     "subject": "ContentHub",
@@ -70,6 +74,7 @@
     ],
     "role": ["토이 프로젝트"],
     "git": "https://github.com/pingppung/ContentHub",
-    "youtube": "x"
+    "youtube": "x",
+    "img": "Prodytalk.jpg"
   }
 ]
