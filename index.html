@@ -1,515 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pingppung's Portfolio</title>
+    <title>최규리 포트폴리오</title>
 
-  <!--
-    - favicon 
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/section.css" />
+    <link rel="stylesheet" href="./assets/css/aboutme.css" />
+    <link rel="stylesheet" href="./assets/css/skills.css" />
+    <link rel="stylesheet" href="./assets/css/projects.css" />
+    <script type="module" src="./assets/js/loadData.js"></script>
+  </head>
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/st-02.png" alt="Pingppung" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Pingppung">Choi KyuRi</h1>
-
-          <p class="title">Developer</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="rbfl346964@gmail.com" class="contact-link">rbfl346964@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:01012345678" class="contact-link">010-1234-5678</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1999-04-30">April 30, 1999</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>South Korea</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/pingppung" target='_blank' class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
+  <body>
+    <div id="__next">
+      <div id="wrap">
         <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            저의 포트폴리오 사이트에 방문해주셔서 감사합니다:)<br>
-            아직 수정 중입니다!!!
-          </p>
-        </section>
-
-        <section class="skill">
-          <h3 class="h3 skills-title">My skills</h3>
-          <p>html, css, javascript, reactjs,nodejs, npm, mysql, aws..</p>
-        </section>
-      </article>  
-
-      <!--
-        - testimonials modal
-      -->
-
-      <div class="modal-container" data-modal-container>
-
-        <div class="overlay" data-overlay></div>
-
-        <section class="testimonials-modal">
-
-          <button class="modal-close-btn" data-modal-close-btn>
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-
-        </section>
-
-      </div>
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>AR/VR</button>
-            </li>
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>AR/VR</button>
-              </li>
-
-            </ul>
-
+          <div class="container">
+            <nav>
+              <ul>
+                <li class="select"><a href="#">HOME</a></li>
+                <li><a href="#">ABOUTME</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">CONTACT</a></li>
+              </ul>
+            </nav>
           </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web">
-              <a href="#" data-select-project>
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/ProdyTalk.jpg" alt="prodytalk" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">ProdyTalk</h3>
-
-                <!--<p class="project-category">Web</p>-->
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web">
-              <a href="#"  data-select-project>
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/DoIt.JPG" alt="doit" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DoIt</h3>
-
-                <!--<p class="project-category">Web</p>-->
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="ar/vr">
-              <a href="#"  data-select-project>
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/HansungGO.jpg" alt="hansunggo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">HansungGo</h3>
-
-                <!--<p class="project-category">AR/VR</p>-->
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="ar/vr">
-              <a href="#"  data-select-project>
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="chemcical experiment" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Chemical Experiment</h3>
-
-                <!--<p class="project-category">AR/VR</p>-->
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="ar/vr">
-              <a href="#"  data-select-project>
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="score game" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Score Game</h3>
-
-                <!--<p class="project-category">AR/VR</p>-->
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
         </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Study</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+        <div class="flexArea"></div>
+        <hr />
+        <section id="aboutme">
+          <div class="test">
+            <h2>AboutMe</h2>
+            <div class="aboutme-padding">
+              <div class="content">
+                <div class="content-left">
+                  <div class="img-container">
+                    <p class="img"></p>
                   </div>
-
-                  <h3 class="h3 blog-item-title">Openvidu Study</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
                 </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-      <!--
-        - Project View Details
-      -->
-      <article class="data-detail-project" data-detail-project>
-        <header>
-          <h2 class="h2 article-title"></h2>
-        </header>
-        <section class="data-ProdyTalk" data-project-content>
-          <div class="data-project-cover">
-            <a href="https://github.com/TwoMandarin/ProdyTalk/tree/ckr" target='_blank' class="social-link" style="text-decoration:none;">
-              <ion-icon name="logo-github" style="width: 10%" />프로젝트 코드
-            </a>
-            prodytalk 내용
+                <div class="content-right">
+                  <div class="profile">
+                    <p class="profile-content">
+                      이름 : 최규리<br />
+                      학력 : 한성대학교 컴퓨터공학부 졸업<br />
+                      자격증 : 정보처리기사<br />
+                      수상내역 : 교내 캡스톤디자인 은상<br />
+                      이브와 ICT 동상<br />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-        <section class="data-DoIt" data-project-content>
-          <div class="data-project-cover">
-            개발 중~~
+
+        <hr />
+
+        <section id="skills">
+          <div class="test">
+            <h2>Skills</h2>
+            <div class="skill-category">
+              <h4>frontend</h4>
+              <ul class="frontend"></ul>
+            </div>
+            <div class="skill-category">
+              <h4>backend</h4>
+              <ul class="backend"></ul>
+            </div>
+            <div class="skill-category">
+              <h4>devops</h4>
+              <ul class="devops"></ul>
+            </div>
           </div>
         </section>
-        <section class="data-HansungGo" data-project-content>
-          <div class="data-project-cover">
-            <div class="data-project-img">
-              <img src = "https://user-images.githubusercontent.com/57535999/198869006-b186fc15-c720-4ff9-b3c5-bd5bc02563ed.png" />
-              <img src = "https://user-images.githubusercontent.com/57535999/198872186-7c9c59c4-e0e6-43f8-9a50-8afedaa2752c.png" />
-            </div><br>
-            <p style = "font-size:1.5em;">&#128221; <b>Desciption</b></p><br>
-            <p>우리 학교의 교육이념, 교육목적, 인재상 등과 트랙/학과/학부를
-              증강현실(AR) 게임을 통해 알아보자!
-              교내 곳곳에 있는 13개의 거북이 캐릭터를 찾아 퀴즈 풀고 상품 받아가세요~!!
-              가장 많이 가장 빨리 코인을 획득한 순으로 상품을 드립니다.
-              코인은 퀴즈를 성공적으로 풀면 얻을 수 있습니다.
-            </p><br>
-            <p style = "font-size:1.5em;">&#128269; <b>Overview</b></p><br>
 
-            <br>
-            <p style = "font-size:1.5em;">&#128204; <b>게임 유의사항</b></p><br>
-            <strong>1) 로그인</strong><br><br>
+        <hr />
 
-            ★ 로그인 시 입력하는 전화번호는 상품수령 시 사용되오니 신중하게 입력하기 바랍니다.<br><br>
-            ★ 한 번 로그인하면 다시 로그인 할 수 없습니다.<br><br>
-            ★ 재로그인하기 위해서는 어플을 삭제 후 재설치 해야 하며, 삭제 시 모든 앱 데이터가 사라져야 새롭게 로그인 가능합니다.<br><br>
-            ★ 다른 기기로 중복 로그인 시 획득한 코인이 모두 초기화되니 유의하기 바랍니다.<br><br>
-            ★ 종합정보시스템에 등록된 이름, 학번으로 로그인하기 바랍니다.<br><br>
-            ★ 상품수령 시 로그인 시 입력한 정보와 학생증을 비교합니다.<br><br>
-            
-            <strong>2) 설명서</strong><br><br>
-            <img src = "https://user-images.githubusercontent.com/57535999/198871507-361b004d-629c-4ce2-9382-7d5eeea0002a.png">
-            
-            ★ 게임 플레이 방법과 우승 조건이 안내되어 있습니다.<br><br>
-             
-            <strong>3) 인벤토리</strong><br><br>
-            <img src = "https://user-images.githubusercontent.com/57535999/198871535-9cdcf7b9-f745-4a37-978c-7b154443eae2.png">
-            
-            ★ 잡은 코인과 개수를 확인할 수 있습니다.<br><br>
-            ★ 로그인 시 입력한 정보를 확인할 수 있습니다.<br><br>
-          
-            
-            <strong>4) 게임 맵</strong><br><br>
-            <img src = "https://user-images.githubusercontent.com/57535999/198871583-167488c7-b8ef-4cfa-8bf2-21b63088a06f.png">
-            
-            ★ 거북이 캐릭터의 위치를 알려드립니다.<br><br>
-            
-            ★ 거북이 캐릭터는 지도에 표시된 지역 외에는 없습니다.<br><br>
-            
-            ★ 코인 획득을 완료한 지역과 틀린 퀴즈 재도전이 가능한 시간을 알려드립니다.<br><br>
-            <br>
-            <p style = "font-size:1.5em;">&#128295; <b>Tech Stack</b></p><br>
-            <p>Unity 2017.4.10.f1<br>Vuforia Engine<br>3DMax<br>Photoshop</p>
-            <br>
-            <p style = "font-size:1.5em;">&#128588; <b>Author</b></p><br>
-            <p>한성대학교 DC&M 16기, 17기</p>
-          </div>  
+        <section id="projects">
+          <div class="test">
+            <h2>Projects</h2>
+            <div class="projects-list"></div>
+          </div>
         </section>
-      </article>  
 
-      
+        <hr />
 
+        <section id="contact">
+          <div class="test">
+            <h2>Contact</h2>
+            <div class="container">
+              <p>"한 <strong>개발자, 최규리</strong>가 되겠습니다."</p>
+              <p>
+                이메일 : rbfl346964@gmail.com <br />
+                연락처 : 010-1234-5678<br />
+              </p>
+              <div class="link">
+                <a
+                  href="https://github.com/pingppung"
+                  class="git"
+                  target="_blank"
+                >
+                  GIT 바로가기
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-
-  </main>
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
+  </body>
 </html>

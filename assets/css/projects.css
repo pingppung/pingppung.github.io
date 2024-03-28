@@ -1,0 +1,34 @@
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+.project {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 50px;
+  padding: 50px;
+  text-align: left;
+}
+.project > .project-img {
+  text-indent: -9999px;
+  background-image: url(../images/a.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 1000px) {
+  .projects-list {
+    /* flex-direction: column-reverse !important;
+    align-items: center; */
+  }
+
+  .project {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .project-img {
+    background-repeat: no-repeat;
+    height: 400px;
+    justify-content: center;
+  }
+}

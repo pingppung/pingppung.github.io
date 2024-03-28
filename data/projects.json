@@ -1,0 +1,75 @@
+[
+  {
+    "subject": "ProdyTalk",
+    "content": "화상채팅 프로젝트/스터디 협업 플랫폼",
+    "skills": [
+      "React",
+      "Spring Boot",
+      "Openvidu",
+      "AWS EC2 & 53",
+      "Amazon RDS",
+      "Docker"
+    ],
+    "role": [
+      "JWT를 이용하여 로그인 인증 시스템 구현",
+      "AWS의 EC2를 이용한 Ubuntu 기반의 웹 서버 구축",
+      "Openvidu API를 이용하여 웹 환경 화상채팅 시스템 구현"
+    ],
+    "git": "https://github.com/pingppung/ProdyTalk",
+    "youtube": "https://youtu.be/UOVKqniYIb0"
+  },
+  {
+    "subject": "BattleQuizGame",
+    "content": "자바 Socket 통신을 이용한 배틀 퀴즈 게임",
+    "skills": ["Socket.io", "Java"],
+    "role": [
+      "Socket을 통한 player 데이터 처리",
+      "Player, Room, RoomManager 클래스로 분리하여 멀티룸 구현 및 복잡도 개선"
+    ],
+    "git": "https://github.com/pingppung/BattleQuizGame",
+    "youtube": "https://youtu.be/ra82PbbsF6w"
+  },
+  {
+    "subject": "Chemistry",
+    "content": "화학실험용 학습 콘텐츠",
+    "skills": ["C#", "Unity 2017.4,4f1", "Oculus Rift SDK"],
+    "role": [
+      "알칼리 금속 반응성에 대한 화학 실험 기능 및 반응 구현",
+      "캐릭터 모델링 및 애니메이션 적용"
+    ],
+    "git": "x",
+    "youtube": "https://youtu.be/aHq1wQ6DmF0"
+  },
+  {
+    "subject": "HansungGO",
+    "content": "한성대 대동제 이벤트 - '한성GO' AR 어플",
+    "skills": [
+      "C#",
+      "Unity 2017.4.10f1",
+      "Vuforia Engine",
+      "3DMax",
+      "Photoshop"
+    ],
+    "role": [
+      "한성대 공식 캐릭터 거북이 타켓 이미지 모델링",
+      "Vuforia를 이용해 이미지 데이터베이스 생성"
+    ],
+    "git": "private",
+    "youtube": "x"
+  },
+  {
+    "subject": "ContentHub",
+    "content": "멀티미디어 콘텐츠 크롤링 서비스 (개발 중)",
+    "skills": [
+      "JavaScript",
+      "Java",
+      "SpringBoot",
+      "React",
+      "Selenium",
+      "MongoDB"
+    ],
+    "role": ["토이 프로젝트"],
+    "git": "https://github.com/pingppung/ContentHub",
+    "youtube": "x"
+  }
+]

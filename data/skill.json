@@ -1,0 +1,5 @@
+[
+  { "frontend": ["HTML5", "CSS", "React", "JavaScript"] },
+  { "backend": ["Java", "NodeJS", "Spring Boot"] },
+  { "devops": ["GIT", "AWS EC2 & 53", "Intellj", "Eclipse", "VSCode"] }
+]
