@@ -17,7 +17,7 @@
     ],
     "git": "https://github.com/pingppung/ProdyTalk",
     "youtube": "https://youtu.be/UOVKqniYIb0",
-    "img": "Prodytalk.jpg"
+    "img": "ProdyTalk.jpg"
   },
   {
     "subject": "BattleQuizGame",
@@ -29,7 +29,7 @@
     ],
     "git": "https://github.com/pingppung/BattleQuizGame",
     "youtube": "https://youtu.be/ra82PbbsF6w",
-    "img": "Prodytalk.jpg"
+    "img": "ProdyTalk.jpg"
   },
   {
     "subject": "Chemistry",
@@ -41,7 +41,7 @@
     ],
     "git": "x",
     "youtube": "https://youtu.be/aHq1wQ6DmF0",
-    "img": "Prodytalk.jpg"
+    "img": "ProdyTalk.jpg"
   },
   {
     "subject": "HansungGO",
@@ -59,7 +59,7 @@
     ],
     "git": "private",
     "youtube": "x",
-    "img": "Prodytalk.jpg"
+    "img": "ProdyTalk.jpg"
   },
   {
     "subject": "ContentHub",
@@ -75,6 +75,6 @@
     "role": ["토이 프로젝트"],
     "git": "https://github.com/pingppung/ContentHub",
     "youtube": "x",
-    "img": "Prodytalk.jpg"
+    "img": "ProdyTalk.jpg"
   }
 ]
