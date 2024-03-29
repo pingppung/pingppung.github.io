@@ -1,10 +1,10 @@
 .skill-category {
-  padding: 50px 40px;
+  padding: 20px 10px;
   /* text-align: left; */
   display: flex;
   flex-direction: row;
-  margin: 0px auto;
   max-width: 960px;
+  align-items: center;
 }
 
 .skill-category h4 {
@@ -20,16 +20,17 @@
   align-items: center;*/
   gap: 25px;
   height: 100%;
+  text-align: left;
 }
 
 .skill-category li {
-  font-size: 18px;
-  /* margin: 0 5px; */
-  /* float: left; */
-  width: 160px;
-  text-align: center;
+  padding: 3px 8px;
+  margin: 5px;
+  width: auto;
+  /* text-align: center; */
   display: inline-block;
 }
+
 .skill-category li:hover {
   background-color: #f49389;
   color: #fff;

@@ -40,8 +40,9 @@ const projectsData = {
     const youtubeOpen = projectSection.querySelector(".youtubeOpen");
     youtubeOpen.href = project.youtube;
 
-    const img = projectSection.querySelector(".project-img");
+    const img = projectSection.querySelector(".project-img .img");
     img.style.backgroundImage = `url('../assets/images/${project.img}')`;
+    img.style.backgroundSize = "contain";
   },
 };
 

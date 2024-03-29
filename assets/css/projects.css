@@ -26,33 +26,36 @@
 
 .pj {
   display: inline-flex;
+  gap: 40px;
+  width: 100%;
   flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
 }
 
 .pj .project-content {
-  padding: 50px;
+  padding: 20px;
   text-align: left;
+  width: 500px;
+  box-sizing: border-box;
 }
 .pj .project-content > h3.subject {
   margin-bottom: 20px;
   font-size: 20px;
 }
-.pj .project-img {
+.pj .img {
   text-indent: -9999px;
-  /* background-image: url(../images/a.jpg); */
   background-repeat: no-repeat;
-  width: 330px;
-  background-size: cover;
+  width: 400px;
+  height: 300px;
 }
 @media (max-width: 1000px) {
   .pj {
     flex-direction: column-reverse !important;
-    align-items: center;
   }
 
-  .project-img {
-    background-repeat: no-repeat;
+  /* .project-img {
     height: 400px;
     justify-content: center;
-  }
+  } */
 }
