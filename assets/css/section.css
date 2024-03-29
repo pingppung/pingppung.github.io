@@ -3,15 +3,23 @@ section {
   text-align: center;
   width: 100%;
   height: 100vh;
-}
 
+  padding: 0 8%;
+}
+@media (max-width: 1000px) {
+  section {
+    padding: 0;
+  }
+}
 section h2 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: inherit;
   margin-bottom: 30px;
 }
-
+section#projects {
+  height: 100%;
+}
 .test {
   margin-bottom: 150px;
   padding: 60px 50px;

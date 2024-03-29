@@ -10,16 +10,16 @@
   display: flex;
   /* flex-flow: row; */
   box-sizing: border-box;
-  /* gap: 16px; */
+  gap: 13px;
   margin: 0 auto;
   padding: 50px 0;
 }
 
 @media (max-width: 1000px) {
-  .content {
+  #aboutme .content {
     flex-direction: column !important;
   }
-  .img {
+  #aboutme .img {
     width: 200px !important;
     height: 200px !important;
   }

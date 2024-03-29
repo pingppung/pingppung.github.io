@@ -65,7 +65,6 @@ header > .container > nav > ul > li > a {
   }
 }
 header > .container > nav > ul > li:hover > a,
-header > .container > nav > ul > li > a:focus,
 header > .container > nav > ul > li.select > a {
   color: #ffb412;
   /* #9d64c7; */
