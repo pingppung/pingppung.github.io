@@ -2,7 +2,7 @@ section {
   position: relative;
   text-align: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   padding: 0 8%;
 }
@@ -17,11 +17,18 @@ section h2 {
   font-weight: inherit;
   margin-bottom: 30px;
 }
+section#skills {
+  height: 100vh;
+}
 section#projects {
   height: 100%;
 }
+section#projects h2 {
+  margin-bottom: 80px;
+}
+
 .test {
-  margin-bottom: 150px;
+  /* margin-bottom: 150px; */
   padding: 60px 50px;
   align-content: center;
 }

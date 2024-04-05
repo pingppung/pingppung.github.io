@@ -36,11 +36,12 @@
 #aboutme .content > .content-left > .img-container {
   padding: 10px;
   display: flex;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
 #aboutme .content > .content-left > .img-container > .img {
-  background-image: url(../images/otuky2.png);
+  background-image: url(../images/g2.png);
   border-radius: 193px;
   object-fit: contain;
   background-size: cover;
@@ -62,6 +63,7 @@
 }
 #aboutme .content > .content-right {
   flex: 1;
+  padding: 0px 30px;
 }
 #aboutme .content > .content-right > .profile > p.profile-content {
   font-size: 15px;
@@ -69,4 +71,11 @@
   margin: 0;
   text-align: left;
   padding: 40px;
+}
+
+#aboutme .topic {
+  text-align: left;
+}
+#aboutme .topic h3 {
+  color: #ffb412;
 }

@@ -1,7 +1,7 @@
 [
   {
     "subject": "ProdyTalk",
-    "content": "화상채팅 프로젝트/스터디 협업 플랫폼",
+    "summary": "화상채팅 프로젝트/스터디 협업 플랫폼",
     "skills": [
       "React",
       "Spring Boot",
@@ -21,7 +21,7 @@
   },
   {
     "subject": "BattleQuizGame",
-    "content": "자바 Socket 통신을 이용한 배틀 퀴즈 게임",
+    "summary": "자바 Socket 통신을 이용한 배틀 퀴즈 게임",
     "skills": ["Socket.io", "Java"],
     "role": [
       "Socket을 통한 player 데이터 처리",
@@ -29,11 +29,11 @@
     ],
     "git": "https://github.com/pingppung/BattleQuizGame",
     "youtube": "https://youtu.be/ra82PbbsF6w",
-    "img": "ProdyTalk.jpg"
+    "img": "final.PNG"
   },
   {
     "subject": "Chemistry",
-    "content": "화학실험용 학습 콘텐츠",
+    "summary": "화학실험용 학습 콘텐츠",
     "skills": ["C#", "Unity 2017.4,4f1", "Oculus Rift SDK"],
     "role": [
       "알칼리 금속 반응성에 대한 화학 실험 기능 및 반응 구현",
@@ -41,11 +41,11 @@
     ],
     "git": "x",
     "youtube": "https://youtu.be/aHq1wQ6DmF0",
-    "img": "ProdyTalk.jpg"
+    "img": "ibwa.JPG"
   },
   {
     "subject": "HansungGO",
-    "content": "한성대 대동제 이벤트 - '한성GO' AR 어플",
+    "summary": "한성대 대동제 이벤트 - '한성GO' AR 어플",
     "skills": [
       "C#",
       "Unity 2017.4.10f1",
@@ -59,11 +59,11 @@
     ],
     "git": "private",
     "youtube": "x",
-    "img": "ProdyTalk.jpg"
+    "img": "HansungGO.jpg"
   },
   {
     "subject": "ContentHub",
-    "content": "멀티미디어 콘텐츠 크롤링 서비스 (개발 중)",
+    "summary": "멀티미디어 콘텐츠 크롤링 서비스 (개발 중)",
     "skills": [
       "JavaScript",
       "Java",
@@ -75,6 +75,6 @@
     "role": ["토이 프로젝트"],
     "git": "https://github.com/pingppung/ContentHub",
     "youtube": "x",
-    "img": "ProdyTalk.jpg"
+    "img": "contenthub.PNG"
   }
 ]

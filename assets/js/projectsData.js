@@ -20,27 +20,42 @@ const projectsData = {
       const projectDiv = document.createElement("div");
       projectDiv.classList.add("project");
 
-      const conenttDiv = document.createElement("div");
-      conenttDiv.classList.add("project-content");
-
-      const subject = document.createElement("h3"); //주제 타이틀
+      const subject = document.createElement("div"); //주제 타이틀
       subject.classList.add("subject");
       subject.textContent = project.subject;
 
-      const content = document.createElement("div");
-      content.classList.add("content");
-      content.textContent = project.content;
+      projectDiv.appendChild(subject);
+
+      const conenttDiv = document.createElement("div");
+      conenttDiv.classList.add("project-content");
+
+      const imgDiv = document.createElement("div");
+      imgDiv.classList.add("project-img");
+      const img = document.createElement("div");
+
+      img.classList.add("img");
+      img.style.backgroundImage = `url('../assets/images/${project.img}')`;
+      img.style.backgroundSize = "contain";
+      imgDiv.appendChild(img);
+
+      conenttDiv.appendChild(imgDiv);
+
+      const projectInfoDiv = document.createElement("div");
+      projectInfoDiv.classList.add("project-info");
+
+      const summary = document.createElement("div");
+      summary.classList.add("content");
+      summary.textContent = project.summary;
 
       const skills = document.createElement("div");
       skills.classList.add("skills");
-      skills.textContent = "스킬: " + project.skills.join(", ");
+      skills.textContent = project.skills.join(", ");
 
       const role = document.createElement("div");
       role.classList.add("role");
-      role.innerHTML = "<strong>맡은 역할:</strong>";
       project.role.forEach((roleItem) => {
         const roleParagraph = document.createElement("p");
-        roleParagraph.textContent = roleItem;
+        roleParagraph.textContent = "- " + roleItem;
         role.appendChild(roleParagraph);
       });
 
@@ -52,25 +67,14 @@ const projectsData = {
       youtubeOpen.classList.add("youtubeOpen");
       youtubeOpen.href = project.youtube;
 
-      conenttDiv.appendChild(subject);
-      conenttDiv.appendChild(content);
-      conenttDiv.appendChild(skills);
-      conenttDiv.appendChild(role);
-      conenttDiv.appendChild(gitHubOpen);
-      conenttDiv.appendChild(youtubeOpen);
+      projectInfoDiv.appendChild(summary);
+      projectInfoDiv.appendChild(skills);
+      projectInfoDiv.appendChild(role);
+      projectInfoDiv.appendChild(gitHubOpen);
+      projectInfoDiv.appendChild(youtubeOpen);
 
-      const imgDiv = document.createElement("div");
-      imgDiv.classList.add("project-img");
-      const img = document.createElement("div");
-
-      img.classList.add("img");
-      img.style.backgroundImage = `url('../assets/images/${project.img}')`;
-      img.style.backgroundSize = "contain";
-
-      imgDiv.appendChild(img);
+      conenttDiv.appendChild(projectInfoDiv);
       projectDiv.appendChild(conenttDiv);
-      projectDiv.appendChild(imgDiv);
-
       projectSection.appendChild(projectDiv);
     });
   },
