@@ -18,10 +18,19 @@ package-lock.json
 
 # IDE configurations
 .idea
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
 
 # Misc
-_sass/dist
-assets/js/dist
+# _sass/dist
+# assets/js/dist
+
+# VS Code settings
+# .vscode/
+
+# Dev container settings
+.devcontainer/
+
+# EditorConfig (optional)
+.editorconfig
