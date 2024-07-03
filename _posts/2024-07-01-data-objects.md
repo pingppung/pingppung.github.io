@@ -10,15 +10,33 @@ mermaid: true
 ---
 
 ## **DAO (Data Access Object)**
-> 데이터베이스의 데이터에 접근하고 CRUD 작업을 수행하는 객체
+> 데데이터 액세스 로직을 담당하는 객체
 
-주로 데이터베이스와의 직접적인 상호작용을 담당합니다.
-데이터의 영속성을 관리하며, 데이터베이스의 특정 테이블이나 엔티티에 대한 접근을 추상화합니다.
+주로 JDBC나 Hibernate 같은 ORM 프레임워크를 사용하지 않고 순수한 SQL 쿼리나 JDBC 코드를 이용하여 데이터베이스와 상호작용을 합니다.
 
 ```java
-public interface UserRepository extends JpaRepository<Item, Long>{
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class UserDao {
+    
+    private Connection connection;
+
+    public UserDao(Connection connection) {
+        this.connection = connection;
+    }
+
+    public void save(User user) throws SQLException {...}
+
+    public User findById(Long id) throws SQLException {...}
+
+    // 기타 데이터 액세스 메서드들...
 }
+
 ```
+위의 예제에서 Connection 객체를 사용하여 데이터베이스와의 연결을 설정하고, save 메서드와 findById 메서드를 통해 데이터베이스와 상호작용합니다.
 
 ## **DTO (Data Transfer Object)**
 > 계층 간 데이터 전송을 위한 객체로, 비즈니스 로직을 포함하지 않습니다.
@@ -38,9 +56,7 @@ public class UserDTO {
     private String email;
 
     @Override
-    public String toString() {
-        return "UserDTO{id=" + id + ", username='" + username + "', email='" + email + "'}";
-    }
+    public String toString() {...}
 }
 ```
 
@@ -58,31 +74,16 @@ public class User {
     private final Long id; //주민등록번호
     private final String name;
 
-    public User(Long id, String name) {
-        if (id == null || name == null) {
-            throw new IllegalArgumentException("ID and name cannot be null");
-        }
-        this.id = id;
-        this.name = name;
-    }
+    public User(Long id, String name) {...}
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof User)) return false;
-        User other = (User) obj;
-        return Objects.equals(this.id, other.id) && Objects.equals(this.name, other.name);
-    }
+    public boolean equals(Object obj) {...}
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
-    }
+    public int hashCode() {...}
 
     @Override
-    public String toString() {
-        return "User{id=" + id + ", name='" + name + "'}";
-    }
+    public String toString() {...}
 }
 ```
 
@@ -120,9 +121,7 @@ public class User {
     private String email;
     
     @Override
-    public String toString() {
-        return "User{id=" + id + ", username='" + username + "', email='" + email + "'}";
-    }
+    public String toString() {...}
 }
 
 ```
