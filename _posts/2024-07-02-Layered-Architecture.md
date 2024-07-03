@@ -151,7 +151,7 @@ public interface UserRepository extends JpaRepository<Item, Long>{
 ```
 
 ### **Repository와 DAO의 차이점**
-#### [DAO (Data Access Object)]((https://pingppung.github.io/posts/data-objects/))
+#### [DAO (Data Access Object)](https://pingppung.github.io/posts/data-objects/)
 DAO는 데이터베이스와의 직접적인 상호작용을 담당하는 객체입니다. 주로 순수한 SQL 쿼리나 JDBC 코드를 이용하여 데이터베이스와의 연동을 처리합니다. DAO는 데이터베이스의 특정 테이블이나 객체에 집중하여 CRUD(Create, Read, Update, Delete) 연산을 수행하며, 데이터베이스 연결과 트랜잭션 관리를 프로그래머가 직접 처리해야 합니다.
 
 #### Repository
