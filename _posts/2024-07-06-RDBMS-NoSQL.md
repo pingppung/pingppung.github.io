@@ -43,6 +43,8 @@ mermaid: true
 ## 비관계형 데이터베이스 (NoSQL)
 비관계형 데이터베이스는 다양한 데이터 모델을 지원하며, 유연한 스키마를 제공합니다. 이는 특히 대규모 데이터 처리와 높은 확장성이 필요한 환경에서 유리합니다.
 
+![NoSQL](https://pingppung.github.io/assets/img/posts/2024-07-06/비관계형.PNG)
+
 #### 특징
 >장점
 
@@ -62,13 +64,16 @@ mermaid: true
 
 
 #### 유형
-- **키-값 저장소**<br>
+- **키-값 데이터베이스**<br>
  단순한 키와 값 쌍으로 데이터를 저장됩니다.
+
  ```json
     ""Student:1" : {"Name": "Kim", "BirthDate": "2000-01-15"}
 ```
+
 - **문서 지향 데이터베이스**<br>
 각 도큐먼트는 JSON, BSON 또는 XML 형식으로 저장됩니다.
+
 ```json
 {
   "StudentID": 1,
@@ -79,10 +84,11 @@ mermaid: true
     {"ClassID": 102, "ClassName": "Science", "TeacherName": "Mrs. Lee"}
   ]
 }
-
 ```
+
 - **컬럼 지향 데이터베이스**<br>
 행과 열로 구성된 테이블 형태를 사용합니다.
+
 ```sql
     CREATE TABLE Students (
     StudentID uuid PRIMARY KEY,
@@ -97,10 +103,12 @@ mermaid: true
     ClassName text,
     PRIMARY KEY (StudentID, ClassID)
     );
-
 ```
+
 - **그래프 데이터베이스**<br>
+
 노드와 엣지로 구성된 그래프 형태로 데이터를 저장합니다.
+
 ```php
     CREATE (s:Student {StudentID: 1, FirstName: "John", LastName: "Doe", BirthDate: "2000-01-15"})
     CREATE (c1:Class {ClassID: 101, ClassName: "Math", TeacherName: "Mr. Thompson"})
@@ -109,8 +117,27 @@ mermaid: true
     CREATE (s)-[:ENROLLED_IN]->(c2)
 
 ```
+
 #### 주요 NoSQL DB 종류
 - MongoDB
 - Cassandra
 - Redis
 - Neo4j
+
+## 요약
+
+
+| 특징                    | 관계형 데이터베이스 (RDBMS)          | 비관계형 데이터베이스 (NoSQL) |
+| :---------------------- | :----------------------------------- | :---------------------------- |
+| 데이터 모델              | 테이블 기반 (행과 열)                 | 다양한 모델 (문서, 키-값, 컬럼 패밀리, 그래프 등) |
+| 스키마                   | 고정된 스키마                         | 유연한 스키마 또는 스키마 없음 |
+| 언어                     | SQL                                  | 데이터베이스에 따라 다양한 쿼리 언어 |
+| ACID 특성                | 지원 (Atomicity, Consistency, Isolation, Durability) | 일부 데이터베이스에서만 지원 |
+| 확장성                   | 수직적 확장 (서버 성능 향상)          | 수평적 확장 (노드 추가)        |
+| 일관성                   | 강한 일관성                           | 최종 일관성 또는 이벤트 일관성 (데이터베이스에 따라 다름) |
+| 복잡한 쿼리               | 지원 (조인, 서브쿼리 등)              | 일부 데이터베이스에서 제한적으로 지원 |
+| 적용 사례                | 트랜잭션 처리, 복잡한 쿼리 및 보고서 생성 | 대규모 데이터 처리, 비정형 데이터, 분산 시스템 |
+| 유형 예시                | MySQL, PostgreSQL, Oracle, Microsoft SQL Server | MongoDB, Cassandra, Redis, Neo4j |
+| 데이터 무결성            | 높은 수준의 데이터 무결성 보장        | 데이터 무결성 보장이 약함 (유연성 강조) |
+| 관계 정의                | 테이블 간의 명확한 관계 (외래 키)      | 명시적인 관계 정의가 없음 (애플리케이션 수준에서 관리) |
+| 운영 및 유지보수          | 상대적으로 복잡한 운영 및 유지보수    | 상대적으로 간단한 운영 및 유지보수 |
