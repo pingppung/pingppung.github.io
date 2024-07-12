@@ -68,7 +68,7 @@ mermaid: true
  단순한 키와 값 쌍으로 데이터를 저장됩니다.
 
  ```json
-    ""Student:1" : {"Name": "Kim", "BirthDate": "2000-01-15"}
+    "Student:1" : {"Name": "Kim", "BirthDate": "2000-01-15"}
 ```
 
 - **문서 지향 데이터베이스**<br>
