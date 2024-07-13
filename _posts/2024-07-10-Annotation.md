@@ -1,7 +1,7 @@
 ---
 title: Spring의 어노테이션
 author: pingppung
-date: 2024-07-09 13:33:00 +0800
+date: 2024-07-10 13:33:00 +0800
 categories: [Development, Spring]
 tags: [spring, java]
 pin: false
@@ -135,7 +135,7 @@ public class ApiController {
 }
 ```
 ### @Transactional
-트랜잭션 관리를 위한 어노테이션입니다. 메서드나 클래스에 적용하여 해당 범위 내의 작업을 트랜잭션으로 묶어줍니다.
+<a href="https://pingppung.github.io/posts/Transaction/">트랜잭션 관리</a>를 위한 어노테이션입니다. 메서드나 클래스에 적용하여 해당 범위 내의 작업을 트랜잭션으로 묶어줍니다.
 
 ```java
 @Service
