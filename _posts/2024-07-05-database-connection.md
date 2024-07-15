@@ -2,7 +2,7 @@
 title: 데이터베이스 연결 방식 JPA vs Mybatis
 author: pingppung
 date: 2024-07-05 13:33:00 +0800
-categories: [Development, Spring]
+categories: [Development, Database]
 tags: [spring, java, database]
 pin: false
 math: true

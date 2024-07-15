@@ -1,5 +1,5 @@
 ---
-title: Spring 트랜잭션
+title: DB 트랜잭션
 author: pingppung
 date: 2024-07-12 13:33:00 +0800
 categories: [Development, Spring]
