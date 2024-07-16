@@ -1,5 +1,5 @@
 ---
-title: MongoDB에서 MySQL로의 전환: 관계형 데이터베이스에서 리스트 저장 문제
+title: MongoDB에서 MySQL로의 전환 - 관계형 데이터베이스에서 리스트 저장 문제
 author: pingppung
 date: 2024-07-16 13:33:00 +0800
 categories: [Development, Test]

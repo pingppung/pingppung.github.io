@@ -1,5 +1,5 @@
 ---
-title: @어노테이션(Annotation)
+title: 어노테이션(Annotation), @
 author: pingppung
 date: 2024-07-10 13:33:00 +0800
 categories: [Development, Spring]
