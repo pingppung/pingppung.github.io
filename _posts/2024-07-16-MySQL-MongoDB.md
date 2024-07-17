@@ -13,7 +13,7 @@ mermaid: true
 
 MongoDB를 통해 데이터를 관리하면서 얻은 경험과 기술적인 고민을 다음과 같이 정리했습니다.
 
-![MongoDB](https://pingppung.github.io/assets/img/posts/2024-07-16/mongoDB에서.PNG)
+![MongoDB](https://pingppung.github.io/assets/img/posts/2024-07-16/mongoDB.png)
 
 
 ### 데이터 모델링과 문서형 데이터베이스의 활용
@@ -22,7 +22,7 @@ MongoDB는 문서형 데이터베이스로서 스키마 없는 구조를 제공�
 
 ```json
 {
-  "_id": ObjectId("..."),
+  "_id": id,
   "title": "작품 제목",
   "coverImg": "작품 이미지",
   "summary": "작품 요약",
@@ -31,7 +31,7 @@ MongoDB는 문서형 데이터베이스로서 스키마 없는 구조를 제공�
   "adultContent": false
 }
 ```
-하나의 작품이 여러 사이트에서 연재될 수 있다는 점을 고려하여, 해당 작품의 사이트 정보를 리스트로 저장할 수 있도록 했습니다. MongoDB는 유연한 데이터 모델을 제공하여 <span style="background-color:#E6E6FA">리스트 형태의 데이터를 쉽게 다룰 수 있었습니다.</span>
+하나의 작품이 여러 사이트에서 연재될 수 있다는 점을 고려하여, 해당 작품의 사이트 정보를 리스트로 저장할 수 있도록 했습니다. MongoDB는 유연한 데이터 모델을 제공하여 리스트 형태의 데이터를 쉽게 다룰 수 있었습니다.
 
 ### 초기 장점과 유연성
 
@@ -55,12 +55,16 @@ Selenium으로 웹페이지에서 추출한 데이터를 데이터베이스에 �
 
 ### 데이터 모델 재구성과 novel_site 테이블 설계
 
-MySQL에서는 리스트 형태의 데이터를 직접 저장하는 것이 어려웠기 때문에, 각 작품과 사이트의 관계를 명확히 나타낼 수 있는 novle_site 테이블을 생성하여 데이터베이스를 설계하였습니다. 사이트 ID와 작품 ID를 저장하는 방식으로 이를 통해 각각의 작품이 여러 사이트에서 연재되는 정보를 효과적으로 관리할 수 있게 되었습니다.
+
+
+MySQL에서는 리스트 형태의 데이터를 직접 저장하는 것이 어려웠기 때문에, 각 작품과 사이트의 관계를 명확히 나타낼 수 있는 novel_site 테이블을 생성하여 데이터베이스를 설계하였습니다. 사이트 ID와 작품 ID를 저장하는 방식으로 이를 통해 각각의 작품이 여러 사이트에서 연재되는 정보를 효과적으로 관리할 수 있게 되었습니다.
+
+![ERD](https://pingppung.github.io/assets/img/posts/2024-07-16/부분ERD.PNG)
 
 ```sql
 -- 작품 테이블
-CREATE TABLE novle (
-    novle_id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE novel (
+    _id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     cover_img VARCHAR(255),
     summary TEXT,
@@ -70,16 +74,18 @@ CREATE TABLE novle (
 
 -- 사이트 테이블
 CREATE TABLE site (
-    site_id INT AUTO_INCREMENT PRIMARY KEY,
-    site_name VARCHAR(255) NOT NULL
+    _id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    url VARCHAR(255)
 );
 
 -- 작품-사이트 관계 테이블
 CREATE TABLE novle_site (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    novle_id INT,
+    product_id INT,
+    novel_id INT,
     site_id INT,
-    FOREIGN KEY (novle_id) REFERENCES novle(novle_id),
-    FOREIGN KEY (site_id) REFERENCES site(site_id)
+    FOREIGN KEY (novle_id) REFERENCES novle(_id),
+    FOREIGN KEY (site_id) REFERENCES site(_id)
 );
 ```
