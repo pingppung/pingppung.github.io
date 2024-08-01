@@ -69,11 +69,11 @@ class Room {
         this.users = new Vector<>();
     }
 
-    public synchronized void addUser(UserService user) {
+    public void addUser(UserService user) {
         users.add(user);
     }
 
-    public synchronized void removeUser(UserService user) {
+    public void removeUser(UserService user) {
         users.remove(user);
     }
 }
@@ -85,11 +85,11 @@ class RoomManager {
         rooms = new HashMap<>();
     }
 
-    public synchronized Room getRoom(String roomName) {
+    public Room getRoom(String roomName) {
         return rooms.get(roomName);
     }
 
-    public synchronized void createRoom(String roomName) {
+    public void createRoom(String roomName) {
         rooms.put(roomName, new Room(roomName));
     }
 }
