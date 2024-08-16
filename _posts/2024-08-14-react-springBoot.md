@@ -15,7 +15,7 @@ mermaid: false
 REST API는 클라이언트(React)와 서버(Spring Boot)가 서로 데이터를 주고받을 수 있도록 해주는 표준화된 인터페이스입니다. 서버에서 데이터를 제공하는 엔드포인트를 정의하고, 클라이언트는 이 엔드포인트를 호출하여 필요한 데이터를 가져오거나 서버에 데이터를 전송할 수 있습니다.
 
 ## Spring Boot에서 REST API 만들기
-예를 들어, 간단한 유저 정보를 제공하는 API를 만들어보겠습니다.
+예시) 간단한 유저 정보를 제공하는 API
 
 ```java
 @RestController
@@ -49,7 +49,7 @@ function UserInfo({ userId }) {
         setUser(response.data);
       })
       .catch(error => {
-        console.error('There was an error fetching the user data!', error);
+        console.error('실패!', error);
       });
   }, [userId]);
 
