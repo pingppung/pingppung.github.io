@@ -16,13 +16,13 @@ Spring Security는 Java 애플리케이션에서 보안을 관리하는 데 도�
 
 - **권한 부여(Authorization)** : 사용자가 인증된 후, 어떤 자원이나 기능에 접근할 수 있는지를 결정합니다. 예를 들어, 관리자만 접근할 수 있는 페이지가 있다면, Spring Security는 인증된 사용자의 권한을 확인하여 이 페이지에 접근할 수 있는지 결정합니다.
 
-## Spring Security의 인증 처리 과정
+## 인증 처리 과정
 
 Spring Security는 사용자가 로그인할 때 인증을 처리하기 위해 여러 클래스를 순차적으로 사용합니다. 이 과정은 요청이 서버에 도착한 순간부터 사용자가 누구인지 확인하고, 인증된 정보를 안전하게 관리하는 흐름입니다. 이를 통해 애플리케이션은 사용자의 신원을 확실히 확인하고, 적절한 권한을 부여하여 보안을 유지합니다.
 
 아래는 Spring Security가 사용자의 인증을 처리하는 일반적인 흐름입니다.
 
-![Security](https://pingppung.github.io/assets/img/posts/2024-08-21/architecture.png)
+![Security](https://pingppung.github.io/assets/img/posts/2024-08-21/architecture.jpg)
 
 
 1. 사용자가 애플리케이션에 로그인하거나 보호된 리소스에 접근하려고 할 때 요청이 서버에 도착합니다.
@@ -30,10 +30,10 @@ Spring Security는 사용자가 로그인할 때 인증을 처리하기 위해 �
 2. **Authentication Filter**가 요청을 가로채어 인증이 필요한지 확인합니다.
 
 3. 인증이 필요한 경우, **AuthenticationFilter**는 요청을 **AuthenticationManager**에게 넘겨 실제 인증 작업을 처리하도록 합니다.
+ 
+4. **AuthenticationManager**는 여러 **AuthenticationProvider** 중에서 적절한 것을 선택해 사용자의 자격 증명(예: 아이디와 비밀번호)을 검증합니다.
 
-4. **AuthenticationManager**는 여러 Authentication Provider 중에서 적절한 것을 선택해 사용자의 자격 증명(예: 아이디와 비밀번호)을 검증합니다.
-
-5. **AuthenticationProvider**는 사용자의 자격 증명을 검증하기 위해 UserDetailsService를 사용하여 데이터베이스나 다른 저장소에서 사용자 정보를 조회합니다.
+5. **AuthenticationProvider**는 사용자의 자격 증명을 검증하기 위해 **UserDetailsService**를 사용하여 데이터베이스나 다른 저장소에서 사용자 정보를 조회합니다.
 
 6. 인증이 성공하면, 인증된 사용자 정보는 **SecurityContextHolder**에 저장됩니다. 이 정보는 사용자의 인증 상태를 나타내며, 애플리케이션 전반에서 활용됩니다.
 
@@ -46,9 +46,8 @@ Spring Security는 사용자가 로그인할 때 인증을 처리하기 위해 �
 10. 최종적으로, 인증된 사용자에 대한 정보와 권한은 애플리케이션의 비즈니스 로직이나 프레젠테이션 계층에서 활용되며, 사용자에게 적절한 권한을 부여하고, 보호된 리소스에 대한 접근을 제어하는 데 사용됩니다.
 
 
-## spring security 내부 구조 흐름
+### spring security 내부 구조 흐름
 
-https://velog.io/@jinjukim-dev/Spring-Security  
 | **클래스**              | **역할**                                                                 |
 |--------------------------|--------------------------------------------------------------------------|
 | **SecurityContextHolder** | 인증 정보를 저장하고 관리하는 중심 역할을 담당합니다.                   |
@@ -60,3 +59,16 @@ https://velog.io/@jinjukim-dev/Spring-Security
 | **Security Filters**      | 다양한 보안 기능을 처리합니다.                                        |
 
 ## security Filter Chain
+Spring Security에서 요청이 들어올 때, 이 필터 체인을 통해 인증, 권한 검사, 세션 관리 등 다양한 보안 작업이 수행됩니다.
+
+![SecurityFilterChain](https://pingppung.github.io/assets/img/posts/2024-08-21/SecurityFilterChain.jpg
+)
+
+
+## 인증된 상태에서의 요청 처리
+
+Spring Security에서 사용자가 성공적으로 인증되면, 그 정보는 SecurityContextHolder에 저장됩니다. 이 객체는 애플리케이션 전반에서 사용자의 인증 상태를 유지하는 데 중요한 역할을 합니다.
+
+그런데 이 과정에서 "사용자의 요청이 들어오면 Spring Security의 필터가 먼저 요청을 가로채서 처리한다고 하는데, 그러면 SecurityContextHolder는 언제 활용될까?"라는 생각이 들었습니다. 요청이 들어오자마자 SecurityContextHolder에서 인증 정보를 바로 꺼내 사용하는 걸까, 아니면 필터가 요청을 검토한 후에야 SecurityContextHolder가 사용되는 걸까?
+
+실제로는 요청이 들어올 때 필터가 SecurityContextHolder에 저장된 인증 정보를 먼저 확인합니다. 이 과정에서 필터는 해당 인증 정보가 유효한지 검토하고, 그에 따라 요청을 처리합니다. 이로 인해 동일한 세션 내에서는 반복적인 인증 절차 없이 사용자의 인증 상태를 유지할 수 있습니다. 그러나 필터는 여전히 세션 만료나 토큰 유효성 같은 상황을 확인하기 위해 요청을 재검토할 수 있습니다.
