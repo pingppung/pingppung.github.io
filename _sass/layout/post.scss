@@ -368,3 +368,18 @@ header {
     margin-right: -0.5rem;
   }
 }
+.small-table {
+  font-size: 0.8em; /* 글씨 크기를 작게 설정 */
+  line-height: 1.2; /* 줄 간격을 적절히 설정 */
+}
+
+.small-table table {
+  width: 100%; /* 테이블 크기 조정 */
+  border-collapse: collapse; /* 테이블 간격 제거 */
+}
+
+.small-table th, 
+.small-table td {
+  padding: 5px; /* 셀 내부 여백 설정 */
+  border: 1px solid #ddd; /* 테이블 테두리 추가 */
+}
