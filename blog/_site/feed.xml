@@ -1,0 +1,213 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://pingppung.github.io/</id>
+  <title>개발일지</title>
+  <subtitle>신입 개발자 블로그
+</subtitle>
+  <updated>2025-01-18T00:19:38+09:00</updated>
+  <author>
+    <name>Pingppung</name>
+    <uri>https://pingppung.github.io/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://pingppung.github.io/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="ko"
+    href="https://pingppung.github.io/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2025 Pingppung </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>ORM 엔티티 설계: Single Table, Table Per Class, Joined Table</title>
+    <link href="https://pingppung.github.io/posts/orm-entity-design/" rel="alternate" type="text/html" title="ORM 엔티티 설계: Single Table, Table Per Class, Joined Table" />
+    <published>2024-11-24T12:33:00+09:00</published>
+  
+    <updated>2024-11-24T12:33:00+09:00</updated>
+  
+    <id>https://pingppung.github.io/posts/orm-entity-design/</id>
+    <content src="https://pingppung.github.io/posts/orm-entity-design/" />
+    <author>
+      <name>pingppung</name>
+    </author>
+
+  
+    
+    <category term="Backend" />
+    
+    <category term="ORM" />
+    
+  
+
+  <summary>처음에는 소설, 웹툰, 드라마, 영화와 같은 각각의 콘텐츠 유형에 대해 독립적인 엔티티를 만들어 관리하려고 했습니다. 하지만 콘텐츠 유형이 다양해질수록 공통된 속성을 공유하는 상위 클래스 Content를 만들어 상속 구조를 설계하는 것이 더 효율적이라고 판단했습니다.
+
+왜 상속 구조가 유용할까?
+
+
+  
+    공통된 속성 관리
+모든 콘텐츠가 공통적으로 가지는 속성(예: 제목, 설명, 카데고리 등)을 상위 클래스에 정의하면 코드 중복을 줄이고, 확장성을 높일 수 있습니다.
+  
+  
+    유형별 속성 추가 가능
+각 콘텐츠에 특화된 속성은 하위 클래스에서 별도로 정의할 수 있습니다.
+  
+  
+    유지보수와 확장성 향상
+새로운 콘텐츠 유형(예: 음악, 게임)을 추가할 때도 기존 구조를 유지하면서 간...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>MySQL 데이터 백업 및 복원</title>
+    <link href="https://pingppung.github.io/posts/mysql-data/" rel="alternate" type="text/html" title="MySQL 데이터 백업 및 복원" />
+    <published>2024-10-11T12:33:00+09:00</published>
+  
+    <updated>2024-10-12T00:08:49+09:00</updated>
+  
+    <id>https://pingppung.github.io/posts/mysql-data/</id>
+    <content src="https://pingppung.github.io/posts/mysql-data/" />
+    <author>
+      <name>pingppung</name>
+    </author>
+
+  
+    
+    <category term="DevOps" />
+    
+    <category term="Docker" />
+    
+  
+
+  <summary>로컬 환경에서 MySQL을 사용하다가 프로젝트가 진행되면서 Docker로 환경을 옮기게 됐다. Docker 환경으로 전환하면서, 로컬에서 작업했던 데이터가 Docker에서도 있을 거라 생각했다. 하지만 Docker 컨테이너에는 아무 데이터도 없었다. 로컬과 Docker는 완전히 별개 환경이기 때문에 데이터가 자동으로 전환되지 않는다는 점을 깨달았다.
+
+
+
+로컬 MySQL 데이터 백업
+로컬에서 MySQL 데이터를 백업하려면 mysqldump 명령어를 사용한다. 
+이 명령어는 데이터베이스의 테이블, 데이터, 인덱스 등을 SQL 파일로 추출해 저장한다. 아래와 같이 명령어를 실행하여 데이터를 백업할 수 있다.
+mysqldump -u root -p &amp;amp;lt;백업할 데이터베이스 이름&amp;amp;gt; &amp;amp;gt; &amp;amp;lt;데이터...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Docker로 배포 자동화하기</title>
+    <link href="https://pingppung.github.io/posts/docker/" rel="alternate" type="text/html" title="Docker로 배포 자동화하기" />
+    <published>2024-09-27T12:33:00+09:00</published>
+  
+    <updated>2024-10-11T23:58:32+09:00</updated>
+  
+    <id>https://pingppung.github.io/posts/docker/</id>
+    <content src="https://pingppung.github.io/posts/docker/" />
+    <author>
+      <name>pingppung</name>
+    </author>
+
+  
+    
+    <category term="DevOps" />
+    
+    <category term="Docker" />
+    
+  
+
+  <summary>개발 환경
+
+  spring boot 3.2.2
+  react 18.2.0
+  Node.js 18.x
+  docker 27.1.1
+  mysql 8.0.36
+  Gradle
+
+
+
+
+프로젝트 구조 및 환경
+
+이전에는 Spring Boot와 React를 통합 환경에서 작업했습니다. 즉, 백엔드 프로젝트 내에 프론트엔드를 포함한 형태였고, 배포할 때도 하나의 jar 파일을 만들어서 EC2에 올려서 실행했습니다. 이 방식은 초기에는 간편했지만, 프로젝트가 커지고 수정할 때마다 jar 파일을 생성해야 하는 번거로움이 있었습니다. 또 빌드 시간이 길어지는 문제도 발생했습니다.
+
+왜 프론트와 백엔드를 나누게 됐을까?
+
+프로젝트를 하면서 프론트엔드와 백엔드를 나눠서 관리하기로 한 이유는 몇 가지가 있습니다
+
+
+  
+...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>자료구조 기초 정리</title>
+    <link href="https://pingppung.github.io/posts/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조 기초 정리" />
+    <published>2024-09-11T12:33:00+09:00</published>
+  
+    <updated>2024-09-11T12:33:00+09:00</updated>
+  
+    <id>https://pingppung.github.io/posts/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</id>
+    <content src="https://pingppung.github.io/posts/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" />
+    <author>
+      <name>pingppung</name>
+    </author>
+
+  
+    
+    <category term="Programming" />
+    
+    <category term="Data Structures" />
+    
+  
+
+  <summary>자료구조란?
+자료구조는 데이터를 효율적으로 저장하고 관리하는 방법입니다. 우리가 프로그래밍할 때 데이터가 많아지면, 데이터를 어떻게 관리하느냐에 따라 프로그램의 성능이 크게 달라집니다. 그래서 데이터를 잘 정리하고, 필요한 정보를 빠르게 찾을 수 있도록 하는 것이 자료구조의 역할입니다. 배열, 스택, 큐, 트리 같은 것들이 자료구조에 속합니다.
+
+자료구조를 배워야하는 이유
+자료구조를 배우는 이유는, 코드를 더 효율적으로 짜기 위해서입니다. 데이터를 다루는 방법을 잘 알면, 프로그램의 속도를 빠르게 만들 수 있고, 메모리도 아낄 수 있습니다. 예를 들어, 어떤 자료구조를 쓰느냐에 따라 데이터를 찾거나, 추가하거나, 삭제하는 데 걸리는 시간이 크게 달라질 수 있습니다.
+
+자료구조의 종류
+배열(Array)
+...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Spring Security로 JWT 기반 소셜 로그인 구현하기</title>
+    <link href="https://pingppung.github.io/posts/security-jwt-login/" rel="alternate" type="text/html" title="Spring Security로 JWT 기반 소셜 로그인 구현하기" />
+    <published>2024-08-28T12:33:00+09:00</published>
+  
+    <updated>2024-08-28T12:33:00+09:00</updated>
+  
+    <id>https://pingppung.github.io/posts/security-jwt-login/</id>
+    <content src="https://pingppung.github.io/posts/security-jwt-login/" />
+    <author>
+      <name>pingppung</name>
+    </author>
+
+  
+    
+    <category term="Programming" />
+    
+    <category term="Spring Security" />
+    
+  
+
+  <summary>Spring Security의 보안 필터 체인
+Spring Security에서 필터 체인은 웹 애플리케이션의 요청(Request)과 응답(Response)을 처리하기 위해 사용하는 여러 필터의 연속입니다. 필터는 요청이 서버에 도달하기 전에 또는 응답이 클라이언트로 가기 전에 보안 검사를 하고, 필요에 따라 작업을 합니다.
+
+Spring Security의 주요 보안 필터들
+
+  UsernamePasswordAuthenticationFilter: 사용자가 로그인할 때 아이디와 비밀번호를 확인합니다.
+  SecurityContextPersistenceFilter: 사용자의 인증 정보를 세션에 저장하여 로그인 상태를 유지합니다.
+  CsrfFilter: CSRF 공격을 방지하기 위해 웹 폼의 보안을 강화합니...</summary>
+
+  </entry>
+
+</feed>
+
+

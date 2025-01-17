@@ -1,0 +1,40 @@
+.skill-category {
+  padding: 20px 10px;
+  /* text-align: left; */
+  display: flex;
+  flex-direction: row;
+  max-width: 960px;
+  align-items: center;
+}
+
+.skill-category h4 {
+  margin: 0;
+  padding: 20px;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 20px;
+  /*display: flex;
+  flex-flow: row;
+  align-items: center;*/
+  gap: 25px;
+  height: 100%;
+  text-align: left;
+}
+
+.skill-category li {
+  padding: 3px 8px;
+  margin: 5px;
+  width: auto;
+  /* text-align: center; */
+  display: inline-block;
+}
+
+.skill-category li:hover {
+  background-color: #f49389;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px 8px;
+  transition: all 0.4s;
+}
