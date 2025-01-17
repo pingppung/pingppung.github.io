@@ -1,51 +1,31 @@
-# The Site Configuration
-
-# Import the theme
 theme: jekyll-theme-chirpy
 
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
 lang: ko
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: Asia/Seoul
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
+title: 개발일지
 
-title: 개발일지 # the main title
-
-tagline: Backend Engineer # it will display as the sub-title
+tagline: Developer
 
 description: >
   신입 개발자 블로그
   
-
-# Fill in the protocol & hostname for your site.
-# e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://pingppung.github.io"
+url: "https://pingppung.github.io/blog"
 
 github:
-  username: pingppung # change to your github username
-
-# twitter:
-#   username: twitter_username # change to your twitter username
+  username: pingppung
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Pingppung
-  email: rbfl346964@gmail.com # change to your email address
+  email: rbfl346964@gmail.com
   links:
-    # The first element serves as the copyright owner's link
-    # - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/pingppung # change to your github homepage
-    # Uncomment below to add more social links
+    # - https://twitter.com/username
+    - https://github.com/pingppung
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-# Site Verification Settings
 webmaster_verifications:
   google: # fill in your Google verification code
   bing: # fill in your Bing verification code
@@ -54,10 +34,6 @@ webmaster_verifications:
   baidu: # fill in your Baidu verification code
   facebook: # fill in your Facebook verification code
 
-# ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
-
-# Web Analytics Settings
 analytics:
   google:
     id: # fill in your Google Analytics ID
@@ -72,38 +48,18 @@ analytics:
   cloudflare:
     id: # fill in your Cloudflare Web Analytics token
 
-# Pageviews settings
 pageviews:
   provider: # now only supports 'goatcounter'
 
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light  - Use the light color scheme
-#     dark   - Use the dark color scheme
-#
 theme_mode: # [light | dark]
 
-# The CDN endpoint for media resources.
-# Notice that once it is assigned, the CDN url
-# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
-#
-# e.g. 'https://cdn.com'
+
 cdn: "https://chirpy-img.netlify.app"
 
-# the avatar on sidebar, support local or CORS resources
 avatar: '/assets/img/profile.PNG'
 
-# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
-# It can be overridden by a customized `page.image` in front matter.
 social_preview_image: # string, local or CORS resources
 
-# boolean type, the global switch for TOC in posts.
 toc: true
 
 comments:
