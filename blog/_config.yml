@@ -12,7 +12,8 @@ tagline: Developer
 description: >
   신입 개발자 블로그
   
-url: "https://pingppung.github.io/blog"
+url: "https://pingppung.github.io"
+baseurl: "/blog"
 
 github:
   username: pingppung

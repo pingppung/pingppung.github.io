@@ -1,0 +1,17 @@
+# 기본 URL 설정
+url: "https://pingppung.github.io"
+baseurl: ""  # 루트 경로
+
+# portfolio 폴더의 내용은 /portfolio 경로로 표시
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio
+
+# blog 폴더의 내용은 /blog 경로로 표시
+defaults:
+  - scope:
+      path: "blog"
+    values:
+      baseurl: "/blog"
+      layout: post
